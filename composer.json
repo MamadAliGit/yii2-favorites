@@ -1,0 +1,21 @@
+{
+    "name": "mamadali/yii2-favorites",
+    "description": "user favorites extension for yii2 application",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","favorites","wishlist","yii2-user-favorits", "yii2 favorites", "yii2-wishlist"],
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "MamadAli",
+            "email": "mhmd.ali.shabani@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "mamadali\\favorites\\": ""
+        }
+    }
+}
