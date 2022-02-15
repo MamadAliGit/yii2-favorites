@@ -20,11 +20,6 @@ class FavoritesQuery extends \yii\db\ActiveQuery
 		return $this->andWhere([Favorites::tableName().'.updated_by' => $id]);
 	}
 
-	public function byStatus($status)
-	{
-		return $this->andWhere([Favorites::tableName().'.status' => $status]);
-	}
-
 	public function byId($id)
 	{
 		return $this->andWhere([Favorites::tableName().'.id' => $id]);

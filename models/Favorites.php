@@ -47,7 +47,7 @@ class Favorites extends ActiveRecord
     public function rules()
     {
         return [
-            [['user_id', 'model_id', 'created_at', 'updated_at', 'status', 'created_by', 'updated_by'], 'integer'],
+            [['user_id', 'model_id', 'created_at', 'updated_at', 'created_by', 'updated_by'], 'integer'],
             [['model_class'], 'string', 'max' => 255],
         ];
     }
@@ -64,7 +64,6 @@ class Favorites extends ActiveRecord
             'model_id' => Yii::t('app', 'Model ID'),
             'created_at' => Yii::t('app', 'Created At'),
             'updated_at' => Yii::t('app', 'Updated At'),
-            'status' => Yii::t('app', 'Status'),
             'created_by' => Yii::t('app', 'Created By'),
             'updated_by' => Yii::t('app', 'Updated By'),
         ];

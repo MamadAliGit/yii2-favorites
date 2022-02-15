@@ -3,6 +3,7 @@
 namespace mamadali\favorites;
 
 
+use common\models\Musics;
 use mamadali\favorites\models\Favorites;
 use Yii;
 use yii\base\Component;
@@ -68,12 +69,16 @@ class Favorite extends Component
     {
         $models = [];
         if ($this->_user_id) {
-            $models = Favorites::find()
-                ->byUserId($this->_user_id)
-                ->byModelClass($modelClass)
-                ->all();
+            $models = $modelClass::find()
+                ->andWhere([
+                    $modelClass::tableName() . '.id' => Favorites::find()
+                    ->select(Favorites::tableName() . '.model_id')
+                    ->byUserId($this->_user_id)
+                    ->byModelClass($modelClass)
+                ])->all();
         }
         return $models;
+
     }
 
     public function getCount($modelClass): int
