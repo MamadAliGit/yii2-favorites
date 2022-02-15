@@ -17,6 +17,11 @@ or add
 
 to the require section of your `composer.json` file.
 
+then run migrations
+```
+php yii migrate/up --migrationPath=@vendor/mamadali/yii2-favorites/migrations
+```
+
 first add to config.php or if use advanced project add to common/config/main.php
 
 ```php
