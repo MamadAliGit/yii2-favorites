@@ -24,7 +24,7 @@ class Favorite extends Component
     public function add($modelClass, $model_id): bool
     {
         $flag = true;
-        if ($this->_user_id) {
+        if ($this->_user_id && !$this->has($modelClass, $model_id)) {
             $model = new Favorites();
             $model->user_id = $this->_user_id;
             $model->model_class = $modelClass;
