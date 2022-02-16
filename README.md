@@ -66,3 +66,8 @@ How to get count of user favorites from Product model
 ```php
    Yii::$app->favorites->getCount(Product::class);
 ```
+
+How to get data provider from favorite Products
+```php
+   Yii::$app->favorites->getDataProvider(Product::class);
+```

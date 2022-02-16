@@ -7,6 +7,7 @@ use common\models\Musics;
 use mamadali\favorites\models\Favorites;
 use Yii;
 use yii\base\Component;
+use yii\data\ActiveDataProvider;
 use yii\helpers\ArrayHelper;
 
 
@@ -91,6 +92,19 @@ class Favorite extends Component
                 ->count();
         }
         return $count;
+    }
+
+    public function getDataProvider($modelClass): ActiveDataProvider
+    {
+        return new ActiveDataProvider([
+            'query' => $modelClass::find()
+                ->andWhere([
+                    $modelClass::tableName() . '.id' => Favorites::find()
+                        ->select(Favorites::tableName() . '.model_id')
+                        ->byUserId($this->_user_id)
+                        ->byModelClass($modelClass)
+                ]),
+        ]);
     }
 
 }
