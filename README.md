@@ -1,6 +1,10 @@
 Installation
 ============
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/mamadali/yii2-webhook.svg)](https://packagist.org/packages/mamadali/yii2-webhook)
+[![Total Downloads](https://img.shields.io/packagist/dt/mamadali/yii2-webhook.svg)](https://packagist.org/packages/mamadali/yii2-webhook)
+
+
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
 
 Either run
